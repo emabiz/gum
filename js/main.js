@@ -49,7 +49,7 @@ function infoMsg(msg) {
 
 async function init(e) {
   try {
-    infoMsg('start init...');
+    infoMsg('start init...',navigator.mediaDevices.getUserMedia);
     const stream = await navigator.mediaDevices.getUserMedia(constraints);
     infoMsg('after getUserMedia');
     handleSuccess(stream);
@@ -62,4 +62,4 @@ async function init(e) {
 
 document.querySelector('#showVideo').addEventListener('click', e => init(e));
 
-infoMsg('pippo');
+infoMsg('main javascript loaded');
