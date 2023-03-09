@@ -61,7 +61,7 @@ async function init(e) {
 }
 
 function init1(e) {
-  infoMsg('start init1...',JSON.stringify(navigator.mediaDevices.getUserMedia));
+  infoMsg('start init1...',("" + JSON.stringify(navigator.mediaDevices.getUserMedia)));
   navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
       infoMsg('after getUserMedia');
       handleSuccess(stream);
