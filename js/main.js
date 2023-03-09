@@ -49,7 +49,7 @@ function infoMsg(msg) {
 
 async function init(e) {
   try {
-    infoMsg('start init...',navigator.mediaDevices.getUserMedia);
+    infoMsg('start init...',JSON.stringify(navigator.mediaDevices.getUserMedia));
     const stream = await navigator.mediaDevices.getUserMedia(constraints);
     infoMsg('after getUserMedia');
     handleSuccess(stream);
