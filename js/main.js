@@ -42,10 +42,18 @@ function errorMsg(msg, error) {
   }
 }
 
+function infoMsg(msg) {
+  const errorElement = document.querySelector('#errorMsg');
+  errorElement.innerHTML += `<p>${msg}</p>`;  
+}
+
 async function init(e) {
   try {
+    infoMsg('start init...');
     const stream = await navigator.mediaDevices.getUserMedia(constraints);
+    infoMsg('after getUserMedia');
     handleSuccess(stream);
+    infoMsg('after handleSuccess');
     e.target.disabled = true;
   } catch (e) {
     handleError(e);
