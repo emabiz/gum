@@ -49,7 +49,7 @@ function infoMsg(msg) {
 
 async function init(e) {
   try {
-    infoMsg('start init...',JSON.stringify(navigator.mediaDevices.getUserMedia));
+    infoMsg('start init...');
     const stream = await navigator.mediaDevices.getUserMedia(constraints);
     infoMsg('after getUserMedia');
     handleSuccess(stream);
@@ -73,6 +73,6 @@ function init1(e) {
   });  
 }
 
-document.querySelector('#showVideo').addEventListener('click', e => init1(e));
+document.querySelector('#showVideo').addEventListener('click', e => init(e));
 
 infoMsg('main javascript loaded');
