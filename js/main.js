@@ -60,6 +60,19 @@ async function init(e) {
   }
 }
 
-document.querySelector('#showVideo').addEventListener('click', e => init(e));
+function init1(e) {
+  infoMsg('start init1...',JSON.stringify(navigator.mediaDevices.getUserMedia));
+  navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
+      infoMsg('after getUserMedia');
+      handleSuccess(stream);
+      infoMsg('after handleSuccess');
+      e.target.disabled = true;
+  })
+  .catch(function (err) {
+      handleError(e);
+  });  
+}
+
+document.querySelector('#showVideo').addEventListener('click', e => init1(e));
 
 infoMsg('main javascript loaded');
